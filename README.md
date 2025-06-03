@@ -1,5 +1,5 @@
 # Pokédex Explorer
-Pokédex Explorer is a web app that lets users explore Pokémon data, including species traits, abilities, moves, and individual Pokémon. It presents categorized and searchable content with smooth navigation and dynamic pages.
+Pokédex Explorer is a web app that lets users explore Pokémon data, including species traits, abilities, moves, and individual Pokémon. It presents categorized content with smooth navigation and dynamic pages.
 
 
 ## Features
@@ -111,3 +111,8 @@ npm install
 ```
 npm run dev
 ```
+
+
+## Project Deployment
+You can access the live version of the application here:  
+🔗 [Pokedex App](https://pokedex-jet-nu-12.vercel.app/)
