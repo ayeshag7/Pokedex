@@ -96,11 +96,11 @@ src/
 
 ## Getting Started
 Follow the steps below to run the application locally:
-1. Clone the repository
+1. Clone the repository (Alternatively, extract the provided ZIP file and open the extracted folder)
 ```
 git clone https://github.com/ayeshag7/Pokedex
 ```
-Alternatively, extract the provided ZIP file and open the extracted folder.
+
 2. Navigate to the project directory
 ```
 cd pokedex-explorer 
