@@ -13,13 +13,14 @@ Pokédex Explorer is a web app that lets users explore Pokémon data, including 
 
 
 ## Tech Stack
+The primary tech stack used to develop this application included:
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
 
 ## API Reference
-This application leverages the [PokéAPI](https://pokeapi.co/), a free and open RESTful API that provides rich data about the Pokémon universe. It offers structured access to Pokémon species, abilities, moves, stats, and more — making it an ideal backend data source for building interactive Pokémon-based applications.
+This application utilizes the [PokéAPI](https://pokeapi.co/), a free and open RESTful API that provides rich data about the Pokémon universe. It offers structured access to Pokémon species, abilities, moves, stats, and more — making it an ideal backend data source for building interactive Pokémon-based applications.
 
 
 ### Endpoints Used
@@ -97,11 +98,12 @@ src/
 Follow the steps below to run the application locally:
 1. Clone the repository
 ```
-git clone https://github.com/ayeshag7/pokédex.git
+git clone https://github.com/ayeshag7/Pokedex
 ```
+Alternatively, extract the provided ZIP file and open the extracted folder.
 2. Navigate to the project directory
 ```
-cd pokemon-insight
+cd pokedex-explorer 
 ```
 3. Install dependencies
 ```
@@ -115,4 +117,5 @@ npm run dev
 
 ## Project Deployment
 You can access the live version of the application here:  
-🔗 [Pokedex App](https://pokedex-jet-nu-12.vercel.app/)
+[Pokedex App](https://pokedex-jet-nu-12.vercel.app/)
+

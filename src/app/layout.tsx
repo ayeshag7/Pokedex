@@ -25,7 +25,7 @@ const pressStart = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Pokémon Insight | Explore Pokémon Data, Moves, Species & More",
+  title: "Pokémon Explorer | Explore Pokémon Data, Moves, Species & More",
   description:
     "Dive into the world of Pokémon with detailed insights on abilities, species, moves, and types.",
 };

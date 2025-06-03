@@ -13,6 +13,8 @@ import {
 
 import { useRef, useState } from "react";
 
+
+// FloatingDock - Parent component that renders both desktop and mobile floating docks.
 export const FloatingDock = ({
   items,
   desktopClassName,
@@ -30,6 +32,7 @@ export const FloatingDock = ({
   );
 };
 
+// FloatingDockMobile - Renders a toggleable button dock for mobile view.
 const FloatingDockMobile = ({
   items,
   className,
@@ -82,6 +85,8 @@ const FloatingDockMobile = ({
   );
 };
 
+
+// FloatingDockDesktop - Renders interactive floating dock for desktop view.
 const FloatingDockDesktop = ({
   items,
   className,
