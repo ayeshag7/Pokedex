@@ -1,5 +1,5 @@
 // app/api/pokemon/route.ts
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 interface PokemonSummary {
   name: string;
@@ -12,10 +12,13 @@ interface PokemonDetail {
   type: string | null;
 }
 
-export async function GET(): Promise<Response> {
-  try {
-    const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=30");
+export async function GET(req: NextRequest): Promise<Response> {
+  const { searchParams } = new URL(req.url);
+  const limit = parseInt(searchParams.get("limit") ?? "20", 10);
+  const offset = parseInt(searchParams.get("offset") ?? "0", 10);
 
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
     if (!res.ok) {
       return NextResponse.json({ error: "Failed to fetch Pokémon list" }, { status: res.status });
     }

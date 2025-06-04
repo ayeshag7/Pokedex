@@ -12,14 +12,18 @@ interface Pokemon {
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
-async function getPokemonData(): Promise<Pokemon[]> {
-  const res = await fetch(`${baseUrl}/api/pokemon`);
+async function getPokemonData(page: number): Promise<Pokemon[]> {
+  const limit = 20;
+  const offset = (page - 1) * limit;
+  const res = await fetch(`${baseUrl}/api/pokemon?limit=${limit}&offset=${offset}`);
   const data = await res.json();
-  return data.slice(20, 30); // Last 10
+  return data;
 }
 
-export default async function PageTwo() {
-  const pokemonList = await getPokemonData();
+export default async function Page({ params }: { params: Promise<{ page: string }> }) {
+  const { page } = await params;
+  const pageNumber = parseInt(page, 10);
+  const pokemonList = await getPokemonData(pageNumber);
 
   return (
     <main className="py-12 px-8 md:px-16">
@@ -36,12 +40,35 @@ export default async function PageTwo() {
         ))}
       </div>
 
-      {/* === Back Arrow Container === */}
-      <div className="text-center mt-8">
-        <Link href="/" className="text-[#007fcf] font-bold underline">
+    {/* === Navigation Arrows === */}
+    <div className="text-center mt-8 flex justify-center gap-8">
+
+      {/* Home Link */}
+      <Link href="/" className="text-[#007fcf] font-bold underline">
+        Home
+      </Link>
+
+      {/* Back Arrow: Go to "/" if page 2, else previous numbered page */}
+      {pageNumber > 1 && (
+        <Link
+          href={pageNumber === 2 ? "/" : `/page/${pageNumber - 1}`}
+          className="text-[#007fcf] font-bold underline"
+        >
           ← Previous
         </Link>
-      </div>
+      )}
+
+      {/* Next Arrow: Only show if current batch looks full */}
+      {pokemonList.length === 20 && (
+        <Link
+          href={`/page/${pageNumber + 1}`}
+          className="text-[#007fcf] font-bold underline"
+        >
+          Next →
+        </Link>
+      )}
+    </div>
+
     </main>
   );
 }
