@@ -40,7 +40,7 @@ export default async function Home() {
     <main className="py-12 px-8 md:px-16">
 
       {/* === TEXT CONTAINER === */}
-      <div className="flex flex-col items-center mb-8">
+      <div className="flex flex-col items-center mb-12 md:mb-8">
         <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
           <Image
             src="/assets/images/pokemon-header-text.png"
